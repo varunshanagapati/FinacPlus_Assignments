@@ -1,0 +1,62 @@
+				     HIGH LEVEL DESIGN DIAGRAM                                   
+
+				     +----------------------+
+                                     |                      |
+                                     |   Data Sources       |
+                                     |                      |
+                                     +----------+-----------+
+                                                |
+                                                | Asset Price Data
+                                                |
+                                     +----------v-----------+
+                                     |                      |
+                                     |   Data Integration   |
+                                     |                      |
+                                     +----------+-----------+
+                                                |
+                                                | Portfolio Updates
+                                                |
+                                     +----------v-----------+
+                                     |                      |
+                                     | Portfolio Management |
+                                     |                      |
+                                     +----------+-----------+
+                                                |
+                      +-------------------------+------------------------+
+                      |                                                  |
+                      |                   Backend Services               |
+                      |                                                  |
+                      | +---------------------+  +---------------------+ |
+         User Requests| |      API Gateway    |  |      Notification   | |
+         ------------>| |                     |  |       System        | |
+                      | |                     |  |                     | |
+                      | +----------+----------+  +----------+----------+ |
+                      |            |                      |              |
+                      |            |                      |              |
+                      |            |                      |              |
+                      | +----------v----------+   +--------v-----------+ |
+                      | |                     |   |                    | |
+                      | |  Web/Mobile Front   |   |    Database        | |
+                      | |        End          |   |                    | |
+                      | |                     |   |                    | |
+                      | +---------------------+   +--------------------+ |
+                      +--------------------------------------------------+
+
+Explaination:
+Data Sources: Various external sources providing asset price data.
+
+Data Integration: Component responsible for integrating data from different sources and updating the portfolios.
+
+Portfolio Management: Core logic for creating, calculating, and maintaining user portfolios.
+
+Backend Services: Houses the API Gateway, which receives user requests and routes them to appropriate services. Also includes the Notification System for sending alerts.
+
+API Gateway: Acts as an entry point for user requests and forwards them to the appropriate backend services.
+
+Web/Mobile Front End: Interfaces through which users interact with the system to view their portfolios in real-time.
+
+Database: Stores user account information, asset data, and portfolio details.
+
+The arrows represent the flow of data and requests through the system.
+
+The system is designed to be scalable and reliable, capable of handling real-time updates and accommodating a large number of users and data.
